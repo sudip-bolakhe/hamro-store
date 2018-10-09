@@ -1,0 +1,91 @@
+<form class="form-horizontal" #userUpdateForm="ngForm" (ngSubmit)="updateUser()">
+  
+    <!-- Username-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Username</label>
+      <div class="col-md-4">
+        <input id="username" [(ngModel)]=" userModel.username" name="username" placeholder="username" class="form-control input-md" required="" type="text">
+      </div>
+    </div>
+  
+    <!-- Password input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="password">Password</label>
+      <div class="col-md-4">
+        <input id="password" [(ngModel)]=" userModel.password" name="password" placeholder="password" class="form-control input-md" required="" disabled type="password">
+      </div>
+    </div>
+    <!-- First Name-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="firstName">First name</label>
+      <div class="col-md-4">
+        <input id="firstName" [(ngModel)]=" userModel.firstName" name="firstName" placeholder="firstname" class="form-control input-md" required="" type="text">
+  
+      </div>
+    </div>
+    <!-- last Name-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="lastName">Last name</label>
+      <div class="col-md-4">
+        <input id="lastName" [(ngModel)]=" userModel.lastName" name="lastName" placeholder="lastname" class="form-control input-md" required="" type="text">
+  
+      </div>
+    </div>
+  
+    <!-- Email-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="email">Email</label>
+      <div class="col-md-4">
+        <input id="email" [(ngModel)]=" userModel.email" name="email" placeholder="email" class="form-control input-md" required="" type="email">
+  
+      </div>
+    </div>
+  
+    <!-- Address-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="address">Address</label>
+      <div class="col-md-4">
+        <input id="address"[(ngModel)]=" userModel.address"  name="address" placeholder="address" class="form-control input-md" required="" type="text">
+  
+      </div>
+    </div>
+  
+    <!-- Phone-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="phone">Phone no.</label>
+      <div class="col-md-4">
+        <input id="phone" [(ngModel)]=" userModel.phone" name="phone" placeholder="0123456789" class="form-control input-md" required="" type="telephone">
+      </div>
+    </div>
+  
+    <!-- Government Id -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="governmentId">Government Id</label>
+      <div class="col-md-4">
+        <input id="governmentId" [(ngModel)]=" userModel.governmentId" name="governmentId" placeholder="government No" class="form-control input-md" required="" type="text">
+      </div>
+    </div>
+       <!-- Role-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="role">Role</label>
+      <div class="col-md-4">
+        <select id="role" class="form-control" name="role"  [(ngModel)]="userModel.role" >
+          <option>Admin</option>
+          <option>User</option>
+        </select>
+        </div>
+    </div>
+  
+    <!-- buttons -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submitBtn"></label>
+      <div class="col-md-8">
+        <button id="submitBtn" name="submitBtn" class="btn btn-success">Update</button>
+        <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
+      </div>
+    </div>
+ 
+  
+  </form>
+
+  <img src="{{imageUrl}}"  alt="photo"  />

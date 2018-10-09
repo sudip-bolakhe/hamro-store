@@ -1,0 +1,55 @@
+<form class="form-horizontal" #addProductForm="ngForm" (ngSubmit)=updateProduct()>
+  
+    <!-- name-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="name">Product Name</label>
+      <div class="col-md-4">
+        <input id="name" [(ngModel)]="productModel.name" name="name" placeholder="name" class="form-control input-md" required="" type="text">
+  
+      </div>
+    </div>
+  
+    <!-- manufacturer-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="manufacturer">Manufacturer</label>
+      <div class="col-md-4">
+        <input id="manufacturer"  [(ngModel)]="productModel.manufacturer" name="manufacturer" placeholder="manufacturer" class="form-control input-md" required="" type="text">
+      </div>
+    </div>
+  
+    <!-- Price-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="price">Price</label>
+      <div class="col-md-4">
+        <input id="price" [(ngModel)]="productModel.price" name="price" placeholder="price" class="form-control input-md" required="" type="number">
+      </div>
+    </div>
+  
+    <!-- Stock-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="stock">Stock</label>
+      <div class="col-md-4">
+        <input id="stock" [(ngModel)]="productModel.stock" name="stock" placeholder="stock" class="form-control input-md" required="" type="number">
+      </div>
+    </div>
+  
+    <!-- Expiry-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="expiryDate">Expiry Date</label>
+      <div class="col-md-4">
+        <input id="expiryDate" [(ngModel)]="productModel.expiryDate" name="expiryDate" placeholder="" class="form-control input-md" required="" type="date">
+      </div>
+    </div>
+
+  
+      <!-- buttons -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="submitBtn"></label>
+        <div class="col-md-8">
+          <button id="submitBtn" name="submitBtn" class="btn btn-success">Submit</button>
+          <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+      
+  </form>
+  <img src="{{imageUrl}}" alt="photo"/>

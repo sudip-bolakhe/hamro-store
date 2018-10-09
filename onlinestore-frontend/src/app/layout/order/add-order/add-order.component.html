@@ -1,0 +1,36 @@
+<form class="form-horizontal" #addOrderForm=ngForm (ngSubmit)=addOrder()>
+  
+  <!-- Odered date-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="orderedDate">Ordered Date</label>
+    <div class="col-md-4">
+      <input id="orderedDate"  [(ngModel)]="orderModel.deliveryLocation" name="orderedDate" placeholder="" class="form-control input-md" required="" type="date">
+    </div>
+  </div>
+  <!-- Delivery date-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="deliveryDate">Delivery Date</label>
+    <div class="col-md-4">
+      <input id="deliveryDate" [(ngModel)]="orderModel.deliveryLocation" name="deliveryDate" placeholder="" class="form-control input-md" required="" type="date">
+    </div>
+  </div>
+
+  <!-- Delivery Location-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="deliveryLocation">Delivery Location</label>
+    <div class="col-md-4">
+      <input id="deliveryLocation" [(ngModel)]="orderModel.deliveryLocation" name="deliveryLocation" placeholder="delivery location" class="form-control input-md" required=""
+        type="text">
+    </div>
+  </div>
+
+  <!-- buttons -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="submitBtn"></label>
+    <div class="col-md-8">
+      <button id="submitBtn" name="submitBtn" class="btn btn-success">Submit</button>
+      <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+
+</form>

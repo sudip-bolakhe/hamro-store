@@ -1,0 +1,7 @@
+
+<app-header></app-header>
+
+<app-sidebar *ngIf="role==='Admin'" ></app-sidebar>
+<section class="main-container">
+    <router-outlet></router-outlet>
+</section>

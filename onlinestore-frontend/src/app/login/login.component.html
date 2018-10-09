@@ -1,0 +1,25 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h1>HamroStore</h1>
+            <div class="text-danger">{{errorMessage}}</div>
+            <form role="form" #form="ngForm" (ngSubmit)="onLoggedin()">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Username" [(ngModel)]="model.username" name="username" >
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password" ng-model="password" [(ngModel)]="model.password" name="password" >
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn rounded-btn" [routerLink]="['/dashboard']" > Log in </button>
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+            </form>
+           
+        </div>
+    </div>
+</div>

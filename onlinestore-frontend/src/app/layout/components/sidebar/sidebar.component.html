@@ -1,0 +1,88 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Dashboard' | translate }}
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('user')">
+                <i class="fa fa-fw fa fa-user-circle"></i>&nbsp;{{ 'Users' | translate }}
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'user'">
+                <ul class="submenu">
+                    <li >
+                        <a  [routerLink]="['/user/adduser']" [routerLinkActive]="['router-link-active']"><span>{{ 'Add User' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a  [routerLink]="['/user/viewuser']" [routerLinkActive]="['router-link-active']"><span>{{ 'View User' | translate }}</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('product')">
+                <i class="fa fa-fw fa fa-gift"></i>&nbsp;{{ 'Product' | translate }}
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'product'">
+                <ul class="submenu">
+                    <li >
+                        <li >
+                        <a  [routerLink]="['/product/addproduct']" [routerLinkActive]="['router-link-active']"><span>{{ 'Add Product' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a  [routerLink]="['/product/viewproduct']" [routerLinkActive]="['router-link-active']"><span>{{ 'View Product' | translate }}</span></a>
+                    </li>
+                   
+                </ul>
+            </li>
+        </div>
+       
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('deliveryperson')">
+                <i class="fa fa-fw fa fa-users"></i>&nbsp;{{ 'Delivery Person' | translate }}
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'deliveryperson'">
+                <ul class="submenu">
+                    <li *ngIf="role==='admin'">
+                        <a  [routerLink]="['/delivery/adddeliveryperson']" [routerLinkActive]="['router-link-active']"><span>{{ 'Add Delivery Person' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a  [routerLink]="['/delivery/viewdeliveryperson']" [routerLinkActive]="['router-link-active']"><span>{{ 'View Delivery Person' | translate }}</span></a>
+                    </li>
+                   
+                </ul>
+            </li>
+        </div>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('order')">
+                <i class="fa fa-fw fa fa-ravelry"></i>&nbsp;{{ 'Order' | translate }}
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'order'">
+                <ul class="submenu">
+                    <li >
+                        <a  [routerLink]="['/order/addorder']" [routerLinkActive]="['router-link-active']"><span>{{ 'Add Order' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a  [routerLink]="['/order/vieworder']" [routerLinkActive]="['router-link-active']"><span>{{ 'View Order' | translate }}</span></a>
+                    </li>
+                  
+                </ul>
+            </li>
+        </div>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('payment')">
+                <i class="fa fa-fw fa fa-ravelry"></i>&nbsp;{{ 'Payment' | translate }}
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'payment'">
+                <ul class="submenu">
+                    <li>
+                        <a  [routerLink]="['/payment/viewpayment']" [routerLinkActive]="['router-link-active']"><span>{{ 'View Payment' | translate }}</span></a>
+                    </li>
+                    
+                </ul>
+            </li>
+        </div>
+    </ul>
+</nav>

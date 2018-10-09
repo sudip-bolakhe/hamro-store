@@ -1,0 +1,50 @@
+<form class="form-horizontal" #deliverPersonAddForm="ngForm" (ngSubmit)="addDeliveryPerson()">
+  
+
+    <!-- First Name-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="firstName">First name</label>
+      <div class="col-md-4">
+        <input id="firstName" [(ngModel)]=" model.firstName" name="firstName" placeholder="firstname" class="form-control input-md" required="" type="text">
+  
+      </div>
+    </div>
+    <!-- last Name-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="lastName">Last name</label>
+      <div class="col-md-4">
+        <input id="lastName" [(ngModel)]=" model.lastName" name="lastName" placeholder="lastname" class="form-control input-md" required="" type="text">
+  
+      </div>
+    </div>
+  
+  
+  
+    <!-- Phone-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="phone">Phone no.</label>
+      <div class="col-md-4">
+        <input id="phone" [(ngModel)]=" model.phone" name="phone" placeholder="0123456789" class="form-control input-md" required="" type="telephone">
+      </div>
+    </div>
+  
+    <!-- Government Id-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="governmentId">Government Id</label>
+      <div class="col-md-4">
+        <input id="governmentId" [(ngModel)]=" model.governmentId" name="governmentId" placeholder="government No" class="form-control input-md" required="" type="text">
+      </div>
+    </div>
+
+  
+    <!-- buttons -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submitBtn"></label>
+      <div class="col-md-8">
+        <button id="submitBtn" name="submitBtn" class="btn btn-success">Submit</button>
+        <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
+      </div>
+    </div>
+  
+  
+  </form>

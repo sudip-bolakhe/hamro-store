@@ -1,0 +1,43 @@
+<div class="card mb-12">
+  <div class="card-header">Payments</div>
+ 
+  <input
+  type='text'
+  style='padding:8px;margin:15px auto;width:30%;'
+  placeholder='Search'
+  (keyup)='updateFilter($event)'
+/>
+  <div class="card-body table-responsive">
+      <div>
+        <ngx-datatable #table
+        class="bootstrap"
+        [rows]="rows"
+        [loadingIndicator]="loadingIndicator"
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="40"
+        [footerHeight]="40"
+        [limit]="10"
+        [rowHeight]="'auto'"
+        [reorderable]="reorderable"
+        >
+        <ngx-datatable-column name ="S.N">
+            <ng-template let-rowIndex="rowIndex"  ngx-datatable-cell-template>
+                {{rowIndex+1}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name ="name"></ngx-datatable-column>
+        <ngx-datatable-column name ="product"></ngx-datatable-column>
+        <ngx-datatable-column name ="amount"></ngx-datatable-column>
+      
+        
+        <ngx-datatable-column name ="Action" prop="id" [sortable]="false">
+            <ng-template let-rowIndex="rowIndex" let-id="id" let-value="value" ngx-datatable-cell-template>
+                <i class="fa fa-trash-o"  (click)="deletePayment(value)"></i>
+            </ng-template>
+        </ngx-datatable-column>
+        </ngx-datatable>
+        
+      </div>
+  </div>
+</div>

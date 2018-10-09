@@ -1,0 +1,98 @@
+<form class="form-horizontal" #addProductForm="ngForm" (ngSubmit)=addProduct()>
+
+  <!-- name-->
+  <div class="form-group">
+    <label class=" control-label" for="name">Product Name</label> <span  *ngIf="pname.errors?.required" style="color:red">*</span>
+    <div class="col-xl-3 text-xs-center" >
+      <input id="name" [(ngModel)]="productModel.name" #pname="ngModel" name="name" placeholder="name" class="form-control input-md"
+        required pattern="^\w+( \w+)*$" type="text">
+    </div>
+    <div *ngIf="pname?.touched">
+
+      <div class="text-danger" *ngIf="pname.errors?.required"> name is required
+      </div>
+      <div class="text-danger" *ngIf="pname.errors?.pattern"> invalid name
+      </div>
+    </div>
+  </div>
+
+  <!-- manufacturer -->
+  <div class="form-group">
+    <label class="control-label" for="manufacturer">Manufacturer</label><span  *ngIf="manufacturer.errors?.required" style="color:red">*</span>
+    <div class="col-xl-3 text-xs-center">
+      <input id="manufacturer" pattern="^\w+( \w+)*$" [(ngModel)]="productModel.manufacturer" name="manufacturer" placeholder="manufacturer"
+        class="form-control col-xl-12" required #manufacturer="ngModel" type="text">
+    </div>
+    <div *ngIf="manufacturer?.touched">
+      <div class="text-danger" *ngIf="manufacturer.errors?.required"> manufacturer is required
+      </div>
+      <div class="text-danger" *ngIf="manufacturer.errors?.pattern"> manufacturer contains only character
+      </div>
+    </div>
+  </div>
+
+  <!-- Price-->
+  <div class="form-group">
+    <label class=" control-label" for="price">Price</label> <span  *ngIf="price.errors?.required" style="color:red">*</span>
+    <div class="col-xl-3 text-xs-center">
+      <input id="price" [(ngModel)]="productModel.price" name="price"
+       placeholder="price" #price="ngModel" class="form-control input-md"
+        required pattern="^[0-9]*" type="text">
+    </div>
+    <div *ngIf="submit?.touched">
+      <div class="text-danger" *ngIf="price.errors.required"> price is required
+      </div>
+      <div class="text-danger" *ngIf="price.errors.pattern"> price in number
+      </div>
+    </div>
+  </div>
+
+  <!-- Stock-->
+  <div class="form-group">
+    <label class=" control-label" for="stock">Stock</label> <span  *ngIf="stock.errors?.required" style="color:red">*</span>
+    <div class="col-xl-3 text-xs-center">
+      <input id="stock" [(ngModel)]="productModel.stock" name="stock" placeholder="stock" #stock="ngModel" class=" form-control   input-md"
+        required pattern="[0-9]*" type="text">
+      <div *ngIf="submit?.touched">
+        <div class=" text-danger" *ngIf="stock.errors.required"> stock is required
+        </div>
+        <div class=" text-danger" *ngIf="stock.errors.pattern"> stock in number only
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Expiry-->
+  <div class="form-group">
+    <label class=" control-label" for="expiryDate">Expiry Date</label><span  *ngIf="expiry.errors?.required" style="color:red">*</span>
+    <div class="col-md-4">
+      <input id="expiryDate" [(ngModel)]="productModel.expiryDate" name="expiryDate" 
+      class="form-control input-md" required 
+      #expiry="ngModel" type="date">
+    </div>
+    <div *ngIf="submit?.touched">
+      <div class=" text-danger" *ngIf="expiry.errors.required"> expiry Date is required
+      </div>
+    </div>
+  </div>
+  <!-- Product  Photo-->
+  <div class="form-group">
+    <label class=" control-label" for="productPhoto">Photo</label> <span   *ngIf="pname.errors?.required" style="color:red">*</span>
+    <div class="col-md-4">
+      <input type="file" id="productPhoto" (change)="onFileChange($event)" [(ngModel)]=" productModel.productPhoto" name="productModel"
+        class="form-control input-md">
+    </div>
+  </div>
+
+  <!-- buttons -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="submitBtn"></label>
+    <div class="col-md-8">
+      <button id="submitBtn" name="submitBtn" 
+        class="btn btn-success" [disabled]="addProductForm.invalid">Submit</button>
+      <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+
+</form>
