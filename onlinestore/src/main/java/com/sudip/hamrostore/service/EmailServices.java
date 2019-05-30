@@ -28,7 +28,7 @@ public class EmailServices {
         System.out.println("reached");
         mail.setTo(email);
         mail.setSubject("Welcome to hamroStore");
-        mail.setFrom("newprogramer08@gmail.com");
+        mail.setFrom("your-email@xyz.com");
         mail.setText("You are  now member of HamroStore");
         javaMailSender.send(mail);
     }
